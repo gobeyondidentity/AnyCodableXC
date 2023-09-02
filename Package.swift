@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.8
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "AnyCodableXC",
     platforms:  [
-        .iOS(.v9),
-        .macOS(.v10_10),
-        .tvOS(.v9),
-        .watchOS(.v2),
+        .iOS(.v11),
+        .macOS(.v10_13),
+        .tvOS(.v11),
+        .watchOS(.v4),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
@@ -27,12 +27,12 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "AnyCodableXC",
-            path: "./Sources/AnyCodable",
-            dependencies: []
+            dependencies: [],
+            path: "./Sources/AnyCodable"
         ),
         .testTarget(
             name: "AnyCodableTests",
-            dependencies: ["AnyCodable"]
+            dependencies: ["AnyCodableXC"]
         ),
     ]
 )
